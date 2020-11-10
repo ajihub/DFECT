@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="QR Scanner"
+        android:text="QR Scanner:"
         tools:layout_editor_absoluteX="92dp"
         tools:layout_editor_absoluteY="198dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

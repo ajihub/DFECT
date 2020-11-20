@@ -1,6 +1,7 @@
 package com.example.dfect.ui.login
 
 import android.app.Activity
+import android.content.Intent
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -14,8 +15,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import com.example.dfect.MainActivity
 
 import com.example.dfect.R
+import com.example.dfect.ui.dashboard.DashboardFragment
 
 class LoginActivity : AppCompatActivity() {
 
@@ -28,8 +31,10 @@ class LoginActivity : AppCompatActivity() {
 
         val username = findViewById<EditText>(R.id.username)
         val password = findViewById<EditText>(R.id.password)
-        val login = findViewById<Button>(R.id.login)
+        val login = findViewById<Button>(R.id.SignIn)
         val loading = findViewById<ProgressBar>(R.id.loading)
+        val skip = findViewById<Button>(R.id.SkipButt)
+
 
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
@@ -94,9 +99,16 @@ class LoginActivity : AppCompatActivity() {
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }
+            //SKIP BUTTON LISTENER
+            skip.setOnClickListener{skip()}
+
         }
     }
 
+    private fun skip() {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+    }
     private fun updateUiWithUser(model: LoggedInUserView) {
         val welcome = getString(R.string.welcome)
         val displayName = model.displayName

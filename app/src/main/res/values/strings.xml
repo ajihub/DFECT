@@ -16,10 +16,10 @@
 
     <!--Log in hyperlinks -->
     <string name="sign_up">
-        <a href="http://www.dfect.com/signup" style="color:red">Don\'t have an account yet? Sign Up</a>
+        <a style="color:red" href="http://www.dfect.com/signup">Don\'t have an account yet? Sign Up</a>
     </string>
     <string name="forgot_password">
-        <a href="http://www.dfect.com/forgotpassword" style="color:red">Forgot password?</a>
+        <a style="color:red" href="http://www.dfect.com/forgotpassword">Forgot password?</a>
     </string>
 
     <!-- Preference Titles -->
